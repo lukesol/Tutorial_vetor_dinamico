@@ -1,3 +1,0 @@
-/mnt/d/Minhas Paradas/BTI/EDB1/Tutorial/build/CMakeFiles/vetor.dir
-/mnt/d/Minhas Paradas/BTI/EDB1/Tutorial/build/CMakeFiles/edit_cache.dir
-/mnt/d/Minhas Paradas/BTI/EDB1/Tutorial/build/CMakeFiles/rebuild_cache.dir
