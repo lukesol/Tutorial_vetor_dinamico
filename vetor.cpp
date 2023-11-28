@@ -22,16 +22,8 @@ int Vetor::get_tam() {
   return this->tam; 
 }
 
-int *Vetor::get_vet() {
-  return this->elementos;
-}
-
 void Vetor::set_tam(int tam) { 
   this->tam = tam; 
-}
-
-void Vetor::set_vet(int *arr) {
-  this->elementos = arr;
 }
 
 int Vetor::consult(int pos) {
@@ -39,7 +31,11 @@ int Vetor::consult(int pos) {
 }
 
 void Vetor::del(int pos) {
-  
+  if (pos >= 0 && pos <= this->tam) { //Verificando se a pos esta no vetor
+    for (int i = pos; i < this->tam - 1; i++) { //Deslocando os elementos
+      this->elementos[i] = this->elementos[i + 1];
+    }
+  }  
 }
 
 int Vetor::search(int num) {
@@ -57,18 +53,27 @@ void Vetor::replace(int num, int pos) {
 }
 
 void Vetor::push_front(int num) {
-  
+  int* novoVetor = new int[tam + 1];
+  novoVetor[0] = num;
+
+  for (int i = 0; i < tam; i++) {
+    novoVetor[i + 1] = this->elementos[i];
+  }
+
+  delete[] this->elementos;
+  this->elementos = novoVetor;
+  this->tam++;
 }
 
 void Vetor::push_back(int num) {
-  
+  this->tam++;
+  this->elementos[tam-1] = num;
 }
 
-
-void Vetor::pop_front(int num) {
-  this->elementos[0];
+void Vetor::pop_front() {
+  del(0);
 }
 
-void Vetor::pop_back(int num) {
-  this->elementos[this->tam];
+void Vetor::pop_back() {
+  del(tam-1);
 }  
