@@ -1,8 +1,6 @@
 #ifndef VETOR_H
 #define VETOR_H
 
-#include <iostream>
-
 class Vetor {
 private:
   int* elementos;
@@ -15,9 +13,7 @@ public:
 
   //Getters e setters
   int get_tam();
-  int *get_vet();
   void set_tam(int tam);
-  void set_vet(int *arr);
 
   //Pede uma posicao e retorna o elemento nela
   int consult(int pos); 
@@ -34,9 +30,9 @@ public:
   void push_back(int num);  
 
   //Remove o elemento na ultima posicao
-  void pop_front(int num);  
+  void pop_front();  
   //Remove o elemento na primeira posicao
-  void pop_back(int num);  
+  void pop_back();  
   
 };
 
